@@ -21,7 +21,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}/PwnedBoot
+      working-directory: ./PwnedBoot
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
     - name: Upload Build Artifacts
@@ -29,5 +29,5 @@ jobs:
       with:
         name: PwnedBoot
         path: |
-          ${{env.GITHUB_WORKSPACE}}/PwnedBoot/x64/Release/*.dll
-          ${{env.GITHUB_WORKSPACE}}/PwnedBoot/x64/Release/*.pdb
+          ./PwnedBoot/x64/Release/*.dll
+          ./PwnedBoot/x64/Release/*.pdb
